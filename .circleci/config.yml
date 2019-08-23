@@ -14,3 +14,10 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test
+
+workflows:
+  version: 2
+  builds:
+    jobs:
+      - echo
+      - test
