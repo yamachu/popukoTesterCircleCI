@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  echo:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - run: echo 'this is echo job'
+      - run: sleep 60
+      - run: echo 'sleep 60 finish'
+  test:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
